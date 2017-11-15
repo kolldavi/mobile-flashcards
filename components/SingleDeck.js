@@ -17,15 +17,17 @@ class SingleDeck extends React.Component {
           <Text>number of questions: {questions.length}</Text>
           <Text>{questions[questions.length - 1].question}</Text>
           <TouchableOpacity
-            onPress={() => {
-              console.log('take quiz');
-            }}>
+            onPress={() =>
+              this.props.navigation.navigate('Quiz', {
+                title: title
+              })}>
             <Text>take quiz</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => {
-              console.log('pressed add');
-            }}>
+            onPress={() =>
+              this.props.navigation.navigate('AddCard', {
+                title: title
+              })}>
             <Text>Add Card</Text>
           </TouchableOpacity>
         </View>

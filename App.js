@@ -2,6 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View, AppRegistry, StatusBar } from 'react-native';
 import DeckList from './components/DeckList';
 import SingleDeck from './components/SingleDeck';
+import AddCard from './components/AddCard';
+import Quiz from './components/Quiz';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducer from './reducers';
@@ -20,7 +22,9 @@ function CustomStatusBar({ backgroundColor, ...props }) {
 const MyApp = StackNavigator(
   {
     Home: { screen: DeckList },
-    Profile: { screen: SingleDeck }
+    Profile: { screen: SingleDeck },
+    AddCard: { screen: AddCard },
+    Quiz: { screen: Quiz }
   },
   {
     navigationOptions: {

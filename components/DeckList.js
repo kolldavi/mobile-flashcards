@@ -21,7 +21,6 @@ class DeckList extends Component {
 
   render() {
     const { decks } = this.props;
-    console.log(this.props);
     return (
       <ScrollView style={{ flex: 2, backgroundColor: 'red' }}>
         {decks.map(item => {
