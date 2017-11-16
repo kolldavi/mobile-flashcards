@@ -48,3 +48,21 @@ setDummyData = results => {
 export function getDecks() {
   return AsyncStorage.getItem(STORAGE_KEY).then(setDummyData);
 }
+
+export function submitEntry({ key, entry }) {
+  return AsyncStorage.mergeItem(
+    STORAGE_KEY,
+    JSON.stringify({
+      [key]: entry
+    })
+  );
+}
+
+export function removeEntry(key) {
+  return AsyncStorage.getItem(STORAGE_KEY).then(results => {
+    const data = JSON.parse(results);
+    data[key] = undefined;
+    delete data[key];
+    AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  });
+}

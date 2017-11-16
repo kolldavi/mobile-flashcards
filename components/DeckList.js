@@ -28,7 +28,7 @@ class DeckList extends Component {
             <View style={styles.item} key={item.title}>
               <TouchableOpacity
                 onPress={() =>
-                  this.props.navigation.navigate('Profile', {
+                  this.props.navigation.navigate('SingleDeck', {
                     title: item.title,
                     questions: item.questions
                   })}>
@@ -45,9 +45,11 @@ class DeckList extends Component {
 const styles = StyleSheet.create({
   item: {
     flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
     backgroundColor: 'white',
-    width: 350,
-    borderRadius: Platform.OS === 'ios' ? 16 : 2,
+
+    borderRadius: Platform.OS === 'ios' ? 16 : 10,
     padding: 20,
     marginLeft: 10,
     marginRight: 10,
