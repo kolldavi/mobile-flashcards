@@ -26,16 +26,6 @@ setDummyData = results => {
             'The combination of a function and the lexical environment within which that function was declared.'
         }
       ]
-    },
-    JavaScript3: {
-      title: 'JavaScript3',
-      questions: [
-        {
-          question: 'What is a closure?',
-          answer:
-            'The 5 of a function and the lexical environment within which that function was declared.'
-        }
-      ]
     }
   };
 

@@ -10,7 +10,7 @@ class SingleDeck extends React.Component {
 
   render() {
     const { deck } = this.props;
-    console.log('deck', deck);
+
     {
       return (
         <View style={{ flex: 1, justifyContent: 'center' }}>

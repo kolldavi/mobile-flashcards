@@ -18,6 +18,19 @@ export const styles = StyleSheet.create({
       height: 3
     }
   },
+  incorrectButton: {
+    alignItems: 'center',
+    padding: 20,
+    backgroundColor: '#FF0000',
+    borderRadius: 16,
+    shadowRadius: 3,
+    shadowOpacity: 0.8,
+    shadowColor: 'rgba(0,0,0,0.24)',
+    shadowOffset: {
+      width: 0,
+      height: 3
+    }
+  },
   buttonText: {
     color: 'white'
   },

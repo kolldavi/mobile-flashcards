@@ -54,6 +54,10 @@ class AddCard extends React.Component {
                   question: question.trim(),
                   answer: answer.trim()
                 });
+                Alert.alert('Card Added To Deck', null, [{ text: 'OK' }], {
+                  cancelable: false
+                });
+                this.props.navigation.goBack();
               }
             }}>
             <View style={styles.button}>
