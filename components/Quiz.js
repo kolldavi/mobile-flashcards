@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { receiveDeck } from '../actions/Deck';
 import { connect } from 'react-redux';
+import FlipCard from 'react-native-flip-card';
 
 import { styles } from '../utils/styles';
 class Quiz extends React.Component {
@@ -61,10 +62,22 @@ class Quiz extends React.Component {
     } else {
       return (
         <View style={{ flex: 1, justifyContent: 'center' }}>
-          <View>
-            <Text>{cards[questionNumber].question}</Text>
-            <Text>{cards[questionNumber].answer}</Text>
-          </View>
+          <FlipCard
+            style={styles.card}
+            friction={6}
+            perspective={1000}
+            flipHorizontal={true}
+            flipVertical={false}
+            flip={false}
+            clickable={true}
+            on>
+            <View style={styles.face}>
+              <Text>{cards[questionNumber].question}</Text>
+            </View>
+            <View style={styles.face}>
+              <Text>{cards[questionNumber].answer}</Text>
+            </View>
+          </FlipCard>
           <TouchableOpacity
             style={styles.container}
             onPress={() => {
