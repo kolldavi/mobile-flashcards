@@ -28,7 +28,7 @@ setDummyData = results => {
       ]
     },
     JavaScript3: {
-      title: 'JavaScript1',
+      title: 'JavaScript3',
       questions: [
         {
           question: 'What is a closure?',
@@ -38,6 +38,7 @@ setDummyData = results => {
       ]
     }
   };
+
   if (results === null) {
     AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(startData));
     return startData;
@@ -56,13 +57,4 @@ export function submitEntry({ key, entry }) {
       [key]: entry
     })
   );
-}
-
-export function removeEntry(key) {
-  return AsyncStorage.getItem(STORAGE_KEY).then(results => {
-    const data = JSON.parse(results);
-    data[key] = undefined;
-    delete data[key];
-    AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-  });
 }

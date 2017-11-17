@@ -22,7 +22,7 @@ class DeckList extends Component {
   render() {
     const { decks } = this.props;
     return (
-      <ScrollView style={{ flex: 2, backgroundColor: 'red' }}>
+      <ScrollView>
         {decks.map(item => {
           return (
             <View style={styles.item} key={item.title}>
@@ -31,7 +31,8 @@ class DeckList extends Component {
                   this.props.navigation.navigate('SingleDeck', {
                     title: item.title,
                     questions: item.questions
-                  })}>
+                  })
+                }>
                 <Text>{item.title}</Text>
                 <Text>Number of questions {item.questions.length}</Text>
               </TouchableOpacity>
@@ -48,7 +49,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: 'white',
-
     borderRadius: Platform.OS === 'ios' ? 16 : 10,
     padding: 20,
     marginLeft: 10,

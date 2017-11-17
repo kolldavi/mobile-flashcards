@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, TextInput } from 'react-native';
 import { addDeck } from '../actions/Deck';
 import { connect } from 'react-redux';
 import { styles } from '../utils/styles';
+
 class AddDeck extends React.Component {
   state = {
     input: ''
@@ -12,8 +13,9 @@ class AddDeck extends React.Component {
     const { input } = this.state;
     {
       return (
-        <View style={styles.container}>
+        <View style={{ paddingTop: 50 }}>
           <TextInput
+            style={styles.input}
             placeholder="Deck Name"
             value={input}
             onChangeText={input => {
@@ -22,6 +24,7 @@ class AddDeck extends React.Component {
           />
 
           <TouchableOpacity
+            style={styles.container}
             onPress={() => {
               const inputTrim = input.trim();
               addDeck({ title: inputTrim });
@@ -36,13 +39,4 @@ class AddDeck extends React.Component {
   }
 }
 
-function mapStateToProps(decks) {
-  return {
-    deckTitles: Object.keys(decks).reduce((result, id) => {
-      result.push(decks[id].title);
-      return result;
-    }, [])
-  };
-}
-
-export default connect(mapStateToProps, { addDeck })(AddDeck);
+export default connect(null, { addDeck })(AddDeck);

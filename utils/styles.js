@@ -2,17 +2,29 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
-    paddingTop: 60,
-    alignItems: 'center'
+    alignSelf: 'center',
+    margin: 30
   },
   button: {
-    marginBottom: 30,
-
     alignItems: 'center',
-    backgroundColor: '#2196F3'
+    padding: 20,
+    backgroundColor: '#2196F3',
+    borderRadius: 16,
+    shadowRadius: 3,
+    shadowOpacity: 0.8,
+    shadowColor: 'rgba(0,0,0,0.24)',
+    shadowOffset: {
+      width: 0,
+      height: 3
+    }
   },
   buttonText: {
-    padding: 10,
     color: 'white'
+  },
+  input: {
+    height: 40,
+    marginTop: 10,
+    borderColor: 'gray',
+    borderWidth: 1
   }
 });

@@ -1,12 +1,14 @@
 import {
   RECEIVE_DECKS,
   ADD_DECK,
-  EDIT_DECK,
+  ADD_CARD,
   REMOVE_DECK
 } from '../actions/Deck';
+
 import { submitEntry } from '../utils/api';
 
 function decks(state = {}, action) {
+  console.log('Action:', action.type);
   switch (action.type) {
     case RECEIVE_DECKS: {
       return {
@@ -30,38 +32,25 @@ function decks(state = {}, action) {
         }
       };
     }
-    case EDIT_DECK: {
-      submitEntry({
-        key: action.oldTitle,
-        entry: { title: null }
-      });
-      submitEntry({
-        key: action.newTitle,
-        entry: {
-          title: action.newTitle,
-          questions: state[action.oldTitle].questions
-        }
-      });
-      return {
-        ...state,
-        [action.oldTitle]: {
-          title: null
-        },
-        [action.newTitle]: {
-          title: action.newTitle,
-          questions: state[action.oldTitle].questions
-        }
-      };
-    }
-    case REMOVE_DECK: {
+    case ADD_CARD: {
       submitEntry({
         key: action.title,
-        entry: { title: null }
+        entry: {
+          title: action.title,
+          questions: [
+            { question: action.question, answer: action.answer },
+            ...state[action.title].questions
+          ]
+        }
       });
       return {
         ...state,
         [action.title]: {
-          title: null
+          title: action.title,
+          questions: [
+            { question: action.question, answer: action.answer },
+            ...state[action.title].questions
+          ]
         }
       };
     }
