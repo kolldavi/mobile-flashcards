@@ -39,14 +39,9 @@ class AddCard extends React.Component {
             onPress={() => {
               console.log('press');
               if (this.state.question === '' || this.state.answer === '') {
-                Alert.alert(
-                  'You have to enter data in both fields',
-                  null,
-                  [{ text: 'OK' }],
-                  {
-                    cancelable: false
-                  }
-                );
+                Alert.alert('You have to enter data in both fields', null, [
+                  { text: 'OK' }
+                ]);
                 return;
               } else {
                 addCard({
@@ -54,9 +49,7 @@ class AddCard extends React.Component {
                   question: question.trim(),
                   answer: answer.trim()
                 });
-                Alert.alert('Card Added To Deck', null, [{ text: 'OK' }], {
-                  cancelable: false
-                });
+                Alert.alert('Card Added To Deck', null, [{ text: 'OK' }]);
                 this.props.navigation.goBack();
               }
             }}>

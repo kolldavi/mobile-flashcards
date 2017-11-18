@@ -41,20 +41,12 @@ export const styles = StyleSheet.create({
     borderWidth: 1
   },
   card: {
-    alignSelf: 'stretch',
     backgroundColor: 'white',
-    padding: 100
+    padding: 100,
+    borderWidth: 1,
+    flex: 1
   },
   face: {
-    alignItems: 'center',
-    backgroundColor: 'white',
-    borderRadius: 1,
-    shadowRadius: 3,
-    shadowOpacity: 0.8,
-    shadowColor: 'rgba(0,0,0,0.54)',
-    shadowOffset: {
-      width: 0,
-      height: 3
-    }
+    backgroundColor: 'white'
   }
 });

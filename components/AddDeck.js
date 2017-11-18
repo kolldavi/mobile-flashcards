@@ -27,29 +27,17 @@ class AddDeck extends React.Component {
             style={styles.container}
             onPress={() => {
               if (input.trim() === '') {
-                Alert.alert(
-                  'You have to enter data in both fields',
-                  null,
-                  [{ text: 'OK' }],
-                  {
-                    cancelable: false
-                  }
-                );
+                Alert.alert('The Title can not be blank', null, [
+                  { text: 'OK' }
+                ]);
               } else if (decks[input.trim()] === undefined) {
                 addDeck({ title: input.trim() });
-                Alert.alert('Deck Added', null, [{ text: 'OK' }], {
-                  cancelable: false
-                });
+                Alert.alert('Deck Added', null, [{ text: 'OK' }]);
                 this.props.navigation.navigate('Home');
               } else {
-                Alert.alert(
-                  'That name is already taken',
-                  null,
-                  [{ text: 'OK' }],
-                  {
-                    cancelable: false
-                  }
-                );
+                Alert.alert('That name is already taken', null, [
+                  { text: 'OK' }
+                ]);
               }
             }}>
             <View style={styles.button}>

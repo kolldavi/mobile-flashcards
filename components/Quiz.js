@@ -64,12 +64,10 @@ class Quiz extends React.Component {
         <View style={{ flex: 1, justifyContent: 'center' }}>
           <FlipCard
             style={styles.card}
-            friction={6}
+            friction={8}
             perspective={1000}
             flipHorizontal={true}
             flipVertical={false}
-            flip={false}
-            clickable={true}
             on>
             <View style={styles.face}>
               <Text>{cards[questionNumber].question}</Text>
