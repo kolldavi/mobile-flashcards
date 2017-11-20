@@ -37,7 +37,6 @@ class AddCard extends React.Component {
           <TouchableOpacity
             style={styles.container}
             onPress={() => {
-              console.log('press');
               if (this.state.question === '' || this.state.answer === '') {
                 Alert.alert('You have to enter data in both fields', null, [
                   { text: 'OK' }
