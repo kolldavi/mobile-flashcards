@@ -16,7 +16,7 @@ day.
 
 ## Screen Shot of Project
 
-<img src="https://github.com/kolldavi/mobile-flashcards/blob/master/images/ScreenShot.png?raw=true" width="200" height="300" />
+<img src="https://github.com/kolldavi/mobile-flashcards/blob/master/images/ScreenShotimg.png?raw=true" width="200" height="300" />
 
 ## Platform
 
