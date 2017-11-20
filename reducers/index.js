@@ -16,39 +16,41 @@ function decks(state = {}, action) {
       };
     }
     case ADD_DECK: {
+      const { title } = action;
       submitEntry({
-        key: action.title,
+        key: title,
         entry: {
-          title: action.title,
+          title: title,
           questions: []
         }
       });
       return {
         ...state,
-        [action.title]: {
-          title: action.title,
+        [title]: {
+          title: title,
           questions: []
         }
       };
     }
     case ADD_CARD: {
+      const { title, answer, question } = action;
       submitEntry({
-        key: action.title,
+        key: title,
         entry: {
-          title: action.title,
+          title: title,
           questions: [
-            { question: action.question, answer: action.answer },
-            ...state[action.title].questions
+            { question: question, answer: answer },
+            ...state[title].questions
           ]
         }
       });
       return {
         ...state,
-        [action.title]: {
-          title: action.title,
+        [title]: {
+          title: title,
           questions: [
-            { question: action.question, answer: action.answer },
-            ...state[action.title].questions
+            { question: question, answer: answer },
+            ...state[title].questions
           ]
         }
       };
