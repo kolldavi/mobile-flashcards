@@ -29,7 +29,7 @@ setDummyData = results => {
     }
   };
 
-  if (results === null) {
+  if (results !== null) {
     AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(startData));
     return startData;
   } else {
