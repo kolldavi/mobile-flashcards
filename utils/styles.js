@@ -7,7 +7,8 @@ export const styles = StyleSheet.create({
   },
   button: {
     alignItems: 'center',
-    padding: 20,
+    padding: 15,
+    width: 110,
     backgroundColor: '#2196F3',
     borderRadius: 16,
     shadowRadius: 3,
@@ -20,7 +21,8 @@ export const styles = StyleSheet.create({
   },
   incorrectButton: {
     alignItems: 'center',
-    padding: 20,
+    padding: 15,
+    width: 110,
     backgroundColor: '#FF0000',
     borderRadius: 16,
     shadowRadius: 3,
@@ -28,7 +30,7 @@ export const styles = StyleSheet.create({
     shadowColor: 'rgba(0,0,0,0.24)',
     shadowOffset: {
       width: 0,
-      height: 3
+      height: 2
     }
   },
   buttonText: {
@@ -41,12 +43,52 @@ export const styles = StyleSheet.create({
     borderWidth: 1
   },
   card: {
-    backgroundColor: 'white',
     padding: 100,
     borderWidth: 1,
-    flex: 1
+    flex: 1,
+    backgroundColor: 'white'
   },
   face: {
-    backgroundColor: 'white'
+    marginTop: -65,
+    marginLeft: -50,
+    width: 250
+  },
+  cardTitle: {
+    fontSize: 19,
+    fontWeight: 'bold',
+    textDecorationLine: 'underline',
+    marginTop: -25,
+    alignSelf: 'center'
+  },
+  cardScore: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    marginTop: 100,
+    marginBottom: 100,
+    alignSelf: 'center'
+  },
+  singleDeckTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginTop: 50,
+    alignSelf: 'center'
+  },
+  singleDeckCardInfo: {
+    fontSize: 15,
+    fontWeight: 'bold',
+    marginTop: 10,
+    alignSelf: 'center'
+  },
+  line: {
+    height: 1,
+    width: 500,
+    marginLeft: -50,
+    backgroundColor: 'red',
+    marginTop: 15
+  },
+  cardText: {
+    marginTop: 40,
+    marginLeft: 20,
+    fontSize: 15
   }
 });

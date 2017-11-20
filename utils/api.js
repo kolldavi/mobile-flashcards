@@ -48,3 +48,12 @@ export function submitEntry({ key, entry }) {
     })
   );
 }
+
+export function removeDeck(title) {
+  return AsyncStorage.getItem(STORAGE_KEY).then(results => {
+    const data = JSON.parse(results);
+    data[title] = undefined;
+    delete data[title];
+    AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  });
+}

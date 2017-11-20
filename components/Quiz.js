@@ -45,8 +45,8 @@ class Quiz extends React.Component {
     if (questionNumber === questionSize) {
       return (
         <View>
-          <Text>
-            You got {this.state.numberCorrect} / {questionNumber} correct
+          <Text style={styles.cardScore}>
+            You got {this.state.numberCorrect} out of {questionNumber} correct
           </Text>
           <TouchableOpacity
             style={styles.container}
@@ -63,19 +63,31 @@ class Quiz extends React.Component {
       return (
         <View style={{ flex: 1, justifyContent: 'center' }}>
           <FlipCard
-            style={styles.card}
+            style={[styles.line, styles.card]}
             friction={8}
             perspective={1000}
             flipHorizontal={true}
             flipVertical={false}
             on>
             <View style={styles.face}>
-              <Text>{cards[questionNumber].question}</Text>
+              <Text style={styles.cardTitle}>Question</Text>
+              <Text style={styles.line} />
+              <Text style={styles.cardText}>
+                {cards[questionNumber].question}
+              </Text>
             </View>
             <View style={styles.face}>
-              <Text>{cards[questionNumber].answer}</Text>
+              <Text style={styles.cardTitle}>Answer</Text>
+              <Text style={styles.cardText}>
+                {cards[questionNumber].answer}
+              </Text>
             </View>
           </FlipCard>
+          <View>
+            <Text>
+              {questionNumber + 1} / {questionSize}
+            </Text>
+          </View>
           <TouchableOpacity
             style={styles.container}
             onPress={() => {

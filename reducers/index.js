@@ -8,7 +8,6 @@ import {
 import { submitEntry } from '../utils/api';
 
 function decks(state = {}, action) {
-  console.log('Action:', action.type);
   switch (action.type) {
     case RECEIVE_DECKS: {
       return {
@@ -53,6 +52,16 @@ function decks(state = {}, action) {
           ]
         }
       };
+    }
+    case REMOVE_DECK: {
+      const newState = Object.keys(state)
+        .filter(key => key !== action.title)
+        .reduce((result, current) => {
+          result[current] = state[current];
+          return result;
+        }, {});
+      state = newState;
+      return { ...state };
     }
     default:
       return state;

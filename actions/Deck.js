@@ -25,8 +25,7 @@ export function addCard({ title, question, answer }) {
     answer
   };
 }
-
-export function removeDeck({ title }) {
+export function deleteDeck(title) {
   return {
     type: REMOVE_DECK,
     title

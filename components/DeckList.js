@@ -16,7 +16,9 @@ class DeckList extends Component {
     tabBarLabel: 'Decks'
   };
   componentDidMount() {
-    getDecks().then(decks => this.props.receiveDecks(decks));
+    getDecks().then(decks => {
+      this.props.receiveDecks(decks);
+    });
   }
 
   render() {
