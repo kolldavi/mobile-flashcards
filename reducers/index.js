@@ -54,14 +54,12 @@ function decks(state = {}, action) {
       };
     }
     case REMOVE_DECK: {
-      const newState = Object.keys(state)
+      return Object.keys(state)
         .filter(key => key !== action.title)
         .reduce((result, current) => {
           result[current] = state[current];
           return result;
         }, {});
-      state = newState;
-      return { ...state };
     }
     default:
       return state;
