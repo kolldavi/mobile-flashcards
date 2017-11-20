@@ -33,7 +33,9 @@ class AddDeck extends React.Component {
               } else if (decks[input.trim()] === undefined) {
                 addDeck({ title: input.trim() });
                 Alert.alert('Deck Added', null, [{ text: 'OK' }]);
-                this.props.navigation.navigate('Home');
+                this.props.navigation.navigate('SingleDeck', {
+                  title: input.trim()
+                });
               } else {
                 Alert.alert('That name is already taken', null, [
                   { text: 'OK' }
