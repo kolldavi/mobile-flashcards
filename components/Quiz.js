@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { receiveDeck } from '../actions/Deck';
 import { connect } from 'react-redux';
 import FlipCard from 'react-native-flip-card';
-
+import { clearLocalNotification, setLocalNotification } from '../utils/helpers';
 import { styles } from '../utils/styles';
 class Quiz extends React.Component {
   state = {
@@ -28,6 +28,9 @@ class Quiz extends React.Component {
       this.setState(prevState => {
         return { currentQuestion: prevState.currentQuestion + 1 };
       });
+    }
+    if (this.state.currentQuestion + 1 === this.state.size) {
+      clearLocalNotification().then(setLocalNotification);
     }
   };
 

@@ -5,6 +5,7 @@ import { getDeck } from '../utils/api';
 import { connect } from 'react-redux';
 import { removeDeck } from '../utils/api';
 import { deleteDeck } from '../actions/Deck';
+
 class SingleDeck extends React.Component {
   static navigationOptions = ({ navigation }) => ({
     title: navigation.state.params.title
@@ -66,7 +67,7 @@ class SingleDeck extends React.Component {
     } else {
       return (
         <View>
-          <Text>hello</Text>
+          <Text>Deck Deleted</Text>
         </View>
       );
     }
