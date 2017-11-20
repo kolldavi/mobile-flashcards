@@ -42,7 +42,7 @@ const Tabs = TabNavigator(
     }
   },
   {
-    //animationEnabled: true,
+    animationEnabled: true,
     tabBarPosition: 'top',
     labelStyle: {
       fontSize: 12
