@@ -10,7 +10,10 @@ import { submitEntry } from '../utils/api';
 function decks(state = {}, action) {
   switch (action.type) {
     case RECEIVE_DECKS: {
-      return action.decks;
+      return {
+        ...state,
+        ...action.decks
+      };
     }
     case ADD_DECK: {
       const { title } = action;
