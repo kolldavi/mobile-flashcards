@@ -1,5 +1,13 @@
 {
   "expo": {
-    "sdkVersion": "22.0.0"
+    "name": "mobile-flashcards",
+    "version": "1.0.0",
+    "sdkVersion": "22.0.0",
+    "ios": {
+      "bundleIdentifier": "com.kolldavi.yourappname"
+    },
+    "android": {
+      "package": "com.kolldavi.yourappname"
+    }
   }
 }
